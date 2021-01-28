@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
 
+const Accessory = require('./models/accessory')
+
 var indexRouter = require('./routes/index');
 var createCubeRouter = require('./routes/create')
 var detailsRouter = require('./routes/details');
@@ -15,7 +17,7 @@ var app = express(); // Create a variable named "app" to represent our applicati
 
 // Mongo DB Connection 
 
-const dbURI = 'mongodb+srv://dbtest:{your_db_pw}}@your.mongo.cluster.mongodb.net/testdb'
+const dbURI = 'mongodb+srv://dbtest:ZPNunG4iNYDzHW4@cluster0.bpcd8.mongodb.net/testdb'
 mongoose.connect(dbURI,  {
   useNewUrlParser: true,
   useUnifiedTopology: true

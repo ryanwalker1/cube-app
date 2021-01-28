@@ -16,7 +16,7 @@ router.post('/', function(req, res, next) {
     _id: Math.random(),
     name: req.body.name,
     description: req.body.description,
-    image_url: req.body.imageUrl,
+    imageUrl: req.body.imageUrl,
     level: req.body.difficultyLevel,
     });
     
