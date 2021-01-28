@@ -5,27 +5,38 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
 
-const Accessory = require('./models/accessory')
+// Routers that have all the get/post etc routes
 
 var indexRouter = require('./routes/index');
-var createCubeRouter = require('./routes/create')
+var createCubeRouter = require('./routes/create');
+var attachAccessoryRouter = require('./routes/attach');
 var detailsRouter = require('./routes/details');
 var aboutRouter = require('./routes/about')
 var accessoryRouter = require('./routes/add-accessory');
 
-var app = express(); // Create a variable named "app" to represent our application and invoke Express()
-
+// Create a variable named "app" to represent our application and invoke Express()
+console.log(process.env);
+var app = express(); 
+require('dotenv').config()
 // Mongo DB Connection 
 
-const dbURI = 'mongodb+srv://dbtest:ZPNunG4iNYDzHW4@cluster0.bpcd8.mongodb.net/testdb'
-mongoose.connect(dbURI,  {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-} ).then( (res) => console.log('db connected'))
-  .catch((err) => console.log(err))
+const dbURI = `mongodb+srv://dbtest:ZPNunG4iNYDzHW4@cluster0.bpcd8.mongodb.net/testdb`
+  mongoose.connect(dbURI,  {
+    dbName: process.env.DB_NAME,
+    user: process.env.DB_USER,
+    pass: process.env.DB_PASS,
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
+    .then( (res) => console.log('db connected'))
+    .catch((err) => console.log(err));
 
 
-// view engine setup
+
+
+
+    
+// View Engine Setup
 
 app.set('views', path.join(__dirname, 'views')); // setting folder for public files
 app.set('view engine', 'hbs'); // setting view engine to hbs, engine compiles views and data into HTML
@@ -37,11 +48,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+// Routes
 
-
-app.use('/', indexRouter); // Router for home page > Contains all routes
-app.use('/create', createCubeRouter)
-app.use('/accessory', accessoryRouter)
+app.use('/', indexRouter); // Router for home page 
+app.use('/create', createCubeRouter);
+app.use('/attach', attachAccessoryRouter)
+app.use('/accessory', accessoryRouter);
 app.use('/details', detailsRouter);
 app.use('/about', aboutRouter);
 
