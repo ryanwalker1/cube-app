@@ -89,7 +89,19 @@ p.name {
     padding: 10px;
     border-bottom: 1px solid #2b415433;
 }
-
+.btn-primary {
+  background: orange;
+  border: none;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  width: 35%;
+  margin: 12px;
+  border-radius: 4px;
+  color: black;
+}
 
 button, main a.btn {
     border: none;
@@ -104,6 +116,8 @@ button, main a.btn {
     background: #607588;
     color: white;
 }
+
+
 
 button:hover {
     background-color: #0B2133;
