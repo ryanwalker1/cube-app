@@ -12,12 +12,13 @@ var createCubeRouter = require('./routes/create');
 var attachAccessoryRouter = require('./routes/attach');
 var detailsRouter = require('./routes/details');
 var aboutRouter = require('./routes/about')
-var accessoryRouter = require('./routes/add-accessory');
 
 // Create a variable named "app" to represent our application and invoke Express()
-console.log(process.env);
 var app = express(); 
+
+// Hide your Mongo connection variables 
 require('dotenv').config()
+
 // Mongo DB Connection 
 
 const dbURI = `mongodb+srv://dbtest:ZPNunG4iNYDzHW4@cluster0.bpcd8.mongodb.net/testdb`
@@ -31,11 +32,6 @@ const dbURI = `mongodb+srv://dbtest:ZPNunG4iNYDzHW4@cluster0.bpcd8.mongodb.net/t
     .then( (res) => console.log('db connected'))
     .catch((err) => console.log(err));
 
-
-
-
-
-    
 // View Engine Setup
 
 app.set('views', path.join(__dirname, 'views')); // setting folder for public files
@@ -53,7 +49,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter); // Router for home page 
 app.use('/create', createCubeRouter);
 app.use('/attach', attachAccessoryRouter)
-app.use('/accessory', accessoryRouter);
 app.use('/details', detailsRouter);
 app.use('/about', aboutRouter);
 
