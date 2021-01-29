@@ -1,3 +1,5 @@
+//const dotenv = require('dotenv')
+
 var createError = require('http-errors');
 var express = require('express'); // Require library of code that is Express
 var path = require('path');
@@ -21,11 +23,11 @@ require('dotenv').config()
 
 // Mongo DB Connection 
 
-const dbURI = `mongodb+srv://dbtest:ZPNunG4iNYDzHW4@cluster0.bpcd8.mongodb.net/testdb`
-  mongoose.connect(dbURI,  {
+const dbURI = process.env.DB_URI;
+  mongoose.connect(process.env.DB_URI,  {
     dbName: process.env.DB_NAME,
     user: process.env.DB_USER,
-    pass: process.env.DB_PASS,
+    pass: process.env.DB_PASSWORD,
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
