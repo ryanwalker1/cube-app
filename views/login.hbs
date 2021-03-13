@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Create Cube Page</title>
+  <link href="/stylesheets/site.css" type="text/css" rel="stylesheet">
+  <link rel='shortcut icon' type='image/x-icon' href='/images/favicon.png' />
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <ul>
+                <li><img class="logo" src="/images/logo.png"></li>
+                <li><a href="/">BROWSE</a></li>
+                <li><a href="/about">ABOUT</a></li>
+                <li><a href="/users/login">LOGIN</a></li>
+                <li><a href="/users/register">REGISTER</a></li>    
+                
+            </ul>
+    </header>
+    <main>
+      <h1>{{title}}</h1>
+      <div class="form">
+
+        
+
+  {{!--        {{#if success_msg}}
+               <div class="alert alert-success alert-dismissible fade show" role="alert">
+              {{'registration successful'}}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+        {{/if}}  --}}
+
+
+            {{>messages}}
+
+           {{!--    <div id="notifications"> 
+                  
+                   <p id="notification-message">                        
+                          {{registerStatus}}    
+                  </p> 
+                  
+               </div>  --}}
+
+        <form action='/users/login' method="POST">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username">
+          <label for="Username">Password</label>
+          <input type="text" id="username" name="password">
+          
+          <input type="submit" value="Login"><br>
+          <h3> No Account? <a href="/users/register" style = 'color:red;'>Register</a></h3>        
+           
+        </form>
+      </div>
+    </main>
+  </div>
+  <footer>@Cubicle: Exercise for Express.js and Handlebars</footer>
+
+</body>
+
+</html>

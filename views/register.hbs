@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Create Cube Page</title>
+  <link href="/stylesheets/site.css" type="text/css" rel="stylesheet">
+  <link rel='shortcut icon' type='image/x-icon' href='/images/favicon.png' />
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <ul>
+                <li><img class="logo" src="/images/logo.png"></li>
+                <li><a href="/">BROWSE</a></li>
+                <li><a href="/about">ABOUT</a></li>
+                <li><a href="/users/login">LOGIN</a></li>
+                <li><a href="/users/register">REGISTER</a></li>    
+                
+            </ul>
+    </header>
+    <main>
+      <h1>{{title}}</h1>
+      <div class="form">
+           
+         {{> messages}}
+        
+        
+        <form action='/users/register' method="POST">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username">
+          <label for="firstname">First Name</label>
+          <input type="text" id="firstname" name="firstname">
+          <label for="lastname">Last Name</label>
+          <input type="text" id="lastname" name="lastname">
+          <label for="password">Password</label>
+          <input type="text" id="password" name="password">
+          <label for="password">Confirm Password</label>
+          <input type="text" id="password2" name="password2">
+          
+          <input type="submit" value="REGISTER">  
+         
+          
+        </form>
+      </div>
+    </main>
+  </div>
+  <footer>@Cubicle: Exercise for Express.js and Handlebars</footer>
+
+</body>
+
+</html>

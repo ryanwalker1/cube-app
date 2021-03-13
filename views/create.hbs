@@ -13,20 +13,24 @@
     <header>
       <ul>
                 <li><img class="logo" src="/images/logo.png"></li>
-                <li><a href="/">Browse</a></li>
-                <li><a href="/create">Add a Cube</a></li>
-                <li><a href="/create/accessory">Add Accessory</a></li>
-                <li><a href="/about">About</a></li>
+                <li><a href="/dashboard">BROWSE</a></li>
+                <li><a href="/about">ABOUT</a></li>
+                <li><a href="/create">ADD A CUBE</a></li>
+                <li><a href="/create/accessory">ADD ACCESSORY</a></li>
+                <li><a href="/users/logout">LOGOUT</a></li>
+                
+                
             </ul>
     </header>
     <main>
+      <p>Logged in as {{name}}</p>
       <h1>Create</h1>
       <div class="form">
         <form action='/create/' method="POST">
           <label for="name">Name</label>
           <input type="text" id="name" name="name">
           <label for="name">Description</label>
-          <textarea id="name" name="description"></textarea>
+          <textarea id="description" name="description"></textarea>
           <label for="image">ImageUrl</label>
           <input type="text" id="image" name="imageUrl">
           <label for="difficulty">Difficulty</label>

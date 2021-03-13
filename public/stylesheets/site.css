@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
+#notifications {
+    margin: 0 auto;
+    margin-top: 0px;;
+    margin-bottom: 0px;
+    text-align: center;
+    width: 50%;
+    padding: 0.5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background-color: rgb(231, 118, 118);
+    color: white;
+    border-radius: 5px;
+}
 body {
     margin: 0;
     padding: 0;
@@ -102,6 +115,20 @@ p.name {
   border-radius: 4px;
   color: black;
 }
+
+.btn-delete {
+    background: red;
+    border: none;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    width: 35%;
+    margin: 12px;
+    border-radius: 4px;
+    color: black;
+  }
 
 button, main a.btn {
     border: none;

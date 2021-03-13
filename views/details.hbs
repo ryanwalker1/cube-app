@@ -13,18 +13,21 @@
     <header>
       <ul>
         <li><img class="logo" src="/images/logo.png"></li>
-        <li><a href="/">Browse</a></li>
-        <li><a href="/create">Add a Cube</a></li>
+        <li><a href="/dashboard">Browse</a></li>
         <li><a href="/about">About</a></li>
+        <li><a href="/create">Add a Cube</a></li>
+        <li><a href="/create/accessory">Add Accessory</a></li>
+        <li><a href="/users/logout">LOGOUT</a></li>
       </ul>
     </header>
     <main>
+      <p>Logged in as {{name}}</p>
       <h1>{{cube.name}} </h1>
       <img class="cube" src="{{cube.image_url}}">
       <div class="details">
         <p><span>Description:</span> {{cube.description}}</p>
         <p><span>Difficulty level:</span> {{cube.level}}</p>
-        <a class="btn" href="/">Back</a>
+        <a class="btn" href="/dashboard">Back</a>
       </div>
     </main>
   </div>

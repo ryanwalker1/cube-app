@@ -12,20 +12,34 @@
         <header>
             <ul>
                 <li><img class="logo" src="/images/logo.png"></li>
-                <li><a href="/">Browse</a></li>
-                <li><a href="/">Add a Cube</a></li>
-                <li><a href="/">Add Accessory</a></li>
-                <li><a href="/">About</a></li>
+                <li><a href="/dashboard">Browse</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/create">Add a Cube</a></li>
+                <li><a href="/create/accessory">Add Accessory</a></li>
+                <li><a href="/users/logout">LOGOUT</a></li>
             </ul>
         </header>
         <main>
+          <p>Logged in as {{name}}</p>
 
       <h1>{{cube.name}} </h1>
       <img class="cube" src="{{cube.image_url}}">
       <div class="details">
         <p><span>Description:</span> {{cube.description}}</p>
         <p><span>Difficulty level:</span> {{cube.level}}</p>
-                <a class="btn" href="/">Back</a>   <a class="btn-primary" href="/attach/{{cube._id}}">Attach</a>
+        {{#if owner}}
+                <a class="btn" href="/dashboard">Back</a>  <a class="btn" href="/edit/{{cube._id}}">Edit</a>  <a class="btn-primary" href="/attach/{{cube._id}}">Attach Accessory</a>
+                <form method = "POST" action="/delete/{{cube._id}}" enctype="application/x-www-form-urlencoded">
+                  <input type="hidden" name="_method" value="DELETE">
+                  <button type ="submit" class = "btn-delete">Delete</button>
+                </form>           
+                              
+               
+        {{else}}
+         <a class="btn" href="/dashboard">Back</a>  
+       
+        {{/if}}
+           
             </div>
             <h2>Accessories</h2>
             <div class="accessories">

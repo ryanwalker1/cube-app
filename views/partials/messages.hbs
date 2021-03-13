@@ -1,0 +1,41 @@
+     {{#if errors}}
+               <div id="notifications"> 
+                  {{#each errors}}
+                   <p id="notification-message">                        
+                          {{this.msg}}    
+                  </p> 
+                  {{/each}}
+               </div> 
+            {{/if}} 
+
+
+             {{#if success_msg}}
+               <div id="notifications">                  
+                   <p id="notification-message">                       
+                          {{success_msg}}    
+                  </p> 
+                  
+               </div> 
+            {{/if}} 
+
+
+             {{#if error_msg}}
+               <div id="notifications">                  
+                   <p id="notification-message">                       
+                          {{error_msg}}    
+                  </p> 
+                  
+               </div> 
+            {{/if}} 
+
+              {{#if error}}
+               <div id="notifications">                  
+                   <p id="notification-message">                       
+                          {{error}}    
+                  </p> 
+                  
+               </div> 
+            {{/if}} 
+        
+        
+        
